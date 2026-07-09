@@ -53,11 +53,12 @@ public class EmployeeRoom {
 
 
     public static void getEmployeeByRoom(){
-        Map<Integer, List<EmployeeRoom>> map = list.stream()
+         list.stream()
                 .collect(
                         Collectors.groupingBy(
-                                x -> x.roomNumber));
-        System.out.println(map);
+                                x -> x.roomNumber))
+                 .forEach((x,y)->
+                        System.out.println(x+" : "+y));
     }
 
 }
