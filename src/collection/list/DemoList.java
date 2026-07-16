@@ -18,6 +18,8 @@ public class DemoList {
         printListUsingIterator();
         removeElementFromList();
         printNumberUsingIterator();
+        getConcerrentModificationException();
+        removeElementFromListUsingRemoveIf();
     }
 
     public static void printListUsingIterator(){
@@ -50,5 +52,20 @@ public class DemoList {
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
+    }
+
+
+    public static void getConcerrentModificationException(){
+        for(String s:list){
+            if(s.equals("spring")){
+                list.remove(s);
+            }
+        }
+        System.out.println(list);
+    }
+
+    public static void removeElementFromListUsingRemoveIf(){
+        list.removeIf(s->s.equals("spring"));
+        System.out.println(list);
     }
 }
