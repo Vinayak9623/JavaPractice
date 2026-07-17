@@ -68,4 +68,5 @@ public class DemoList {
         list.removeIf(s->s.equals("spring"));
         System.out.println(list);
     }
+
 }
