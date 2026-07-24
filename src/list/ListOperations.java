@@ -7,7 +7,8 @@ public class ListOperations {
     static void main() {
         //mergeStudentList();
         //commonTech();
-        convertListIntoUpperCase();
+        //convertListIntoUpperCase();
+        sortList();
 
     }
 
@@ -31,5 +32,13 @@ public class ListOperations {
         List<String> list=new ArrayList<>(List.of("Java","Microservices","Mysql"));
         list.replaceAll(String::toUpperCase);
         list.forEach(System.out::println);
+    }
+
+    public static void sortList(){
+        List<String> list=new ArrayList<>(List.of("Vinayak","madhav","Avinash","Banglore"));
+        list.sort(String::compareTo);
+        System.out.println(list);
+        list.sort((a,b)->b.compareTo(a));
+        System.out.println(list);
     }
 }
