@@ -1,14 +1,18 @@
 package list;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ListOperations {
     static void main() {
         //mergeStudentList();
         //commonTech();
         //convertListIntoUpperCase();
-        sortList();
+//        sortList();
+
+        //operationOnListIteratorForwordAndBackword();
+       // convertusingLustiterator();
+
+        stack();
 
     }
 
@@ -40,5 +44,45 @@ public class ListOperations {
         System.out.println(list);
         list.sort((a,b)->b.compareTo(a));
         System.out.println(list);
+    }
+
+    public static void operationOnListIteratorForwordAndBackword(){
+        List<String> list=new ArrayList<>(List.of("Vinayak","Madhav","Avinash","Afrid"));
+        ListIterator<String> it=list.listIterator();
+
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+        while(it.hasPrevious()){
+            System.out.println(it.previous());
+        }
+    }
+
+    public static void convertusingLustiterator(){
+        List<String> list=new ArrayList<>(List.of("Java","Microservices","Mysql"));
+
+        ListIterator<String> it=list.listIterator();
+
+        while(it.hasNext()){
+            String value=it.next();
+            if(value.equals("Java")){
+                it.set("JAVA");
+            }
+        }
+        System.out.println(list);
+
+    }
+
+    public static void stack(){
+        Stack<String> stack=new Stack<>();
+        stack.push("Java");
+        stack.push("Spring");
+        stack.push("Kafka");
+        stack.push("Docker");
+
+        System.out.println(stack.pop());//remove docker
+        System.out.println(stack.peek());
+        System.out.println(stack);
+
     }
 }
